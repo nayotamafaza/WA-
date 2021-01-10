@@ -53,12 +53,8 @@ adb kill-server
 else
 apkpath=$(adb shell pm path com.whatsapp | grep package | tr -d '[[:space:]]')
 version=$(adb shell dumpsys package com.whatsapp | grep versionName | tr -d '[[:space:]]')
-apkflen=$(curl -sI http://www.cdn.whatsapp.net/android/2.11.431/WhatsApp.apk | grep Content-Length | grep -o '[0-9]*')
-if [ $apkflen -eq 18329558 ]; then
-apkfurl=http://www.cdn.whatsapp.net/android/2.11.431/WhatsApp.apk
-else
-apkfurl=http://whatcrypt.com/WhatsApp-2.11.431.apk
-fi
+apkflen=$(curl -sI https://whatcrypt.com/WhatsApp-2.11.431.apk | grep Content-Length | grep -o '[0-9]*')
+apkfurl=https://whatcrypt.com/WhatsApp-2.11.431.apk
 apkname=$(basename  ${apkpath/package:/})
 if [ ! -f tmp/LegacyWhatsApp.apk ]; then
 echo -e "\nDownloading legacy WhatsApp 2.11.431 to local folder\n"
