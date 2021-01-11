@@ -44,19 +44,14 @@ $version = $version.Trim() -replace 'versionName='
 } Else {
 TerminateWithReason("WhatsApp is not installed on the target device")
 }
-$apkflen = Invoke-Expression "bin\curl.exe -sI http://www.cdn.whatsapp.net/android/2.11.431/WhatsApp.apk | bin\grep.exe Content-Length 2>&1"
+$apkflen = Invoke-Expression "bin\curl.exe -sI http://whatcrypt.com/WhatsApp-2.11.431.apk | bin\grep.exe Content-Length 2>&1"
 If ($apklen)
 {
 $apkflen = $apkflen.Trim() -replace 'Content-Length: '
 } Else {
 $apkflen = 0;
 }
-If ($apkflen -eq 18329558)
-{
-$apkfurl = "http://www.cdn.whatsapp.net/android/2.11.431/WhatsApp.apk"
-} Else {
 $apkfurl = "http://whatcrypt.com/WhatsApp-2.11.431.apk"
-}
 "`r`nWhatsApp $version installed`r`n"
 If (Test-Path "tmp\LegacyWhatsApp.apk")
 {

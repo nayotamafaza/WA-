@@ -48,14 +48,10 @@ exit
 bin\adb.exe shell pm path com.whatsapp | bin\grep.exe package > tmp\wapath.txt
 bin\adb.exe shell "echo $EXTERNAL_STORAGE" > tmp\sdpath.txt
 bin\adb.exe shell dumpsys package com.whatsapp | bin\grep.exe versionName > tmp\wapver.txt
-bin\curl.exe -sI http://www.cdn.whatsapp.net/android/2.11.431/WhatsApp.apk | bin\grep.exe Content-Length > tmp\waplen.txt
+bin\curl.exe -sI http://whatcrypt.com/WhatsApp-2.11.431.apk | bin\grep.exe Content-Length > tmp\waplen.txt
 set /p apkflen=<tmp\waplen.txt
 set apkflen=%apkflen:Content-Length: =%
-if %apkflen% == 18329558 (
-set apkfurl=http://www.cdn.whatsapp.net/android/2.11.431/WhatsApp.apk
-) else (
 set apkfurl=http://whatcrypt.com/WhatsApp-2.11.431.apk
-)
 set /p apkpath=<tmp\wapath.txt
 set /p sdpath=<tmp\sdpath.txt
 set apkpath=%apkpath:package:=%
