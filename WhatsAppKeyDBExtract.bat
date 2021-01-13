@@ -124,6 +124,7 @@ bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/msgstore.db
 bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/wa.db
 bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/axolotl.db
 bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/chatsettings.db
+bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/Avatars
 echo.
 if exist tmp\apps\com.whatsapp\f\key (
 echo Extracting whatsapp.cryptkey ...
@@ -153,6 +154,11 @@ echo.
 if exist tmp\apps\com.whatsapp\f\key (
 echo Pushing cipher key to: %sdpath%/WhatsApp/Databases/.nomedia
 bin\adb.exe push tmp\apps\com.whatsapp\f\key %sdpath%/WhatsApp/Databases/.nomedia
+echo.
+)
+if exist tmp\apps\com.whatsapp\Avatars (
+echo Extracting Avatars ...
+copy tmp\apps\com.whatsapp\Avatars extracted\Avatars
 echo.
 )
 echo Cleaning up temporary files ...

@@ -101,6 +101,7 @@ tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/db/msgstore.db
 tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/db/wa.db
 tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/db/axolotl.db
 tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/db/chatsettings.db
+tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/Avatars
 echo -e "\nSaving whatsapp.cryptkey ..."
 cp tmp/apps/com.whatsapp/f/key extracted/whatsapp.cryptkey
 echo -e "Saving msgstore.db ..."
@@ -110,6 +111,8 @@ cp tmp/apps/com.whatsapp/db/wa.db extracted/wa.db
 echo -e "Saving axolotl.db ..."
 cp tmp/apps/com.whatsapp/db/axolotl.db extracted/axolotl.db
 echo -e "Saving chatsettings.db ..."
+cp tmp/apps/com.whatsapp/Avatars extracted/Avatars
+echo -e "Saving Avatars..."
 cp tmp/apps/com.whatsapp/db/chatsettings.db extracted/chatsettings.db
 echo -e "\nPushing cipher key to: $sdpath"
 adb push tmp/apps/com.whatsapp/f/key $sdpath

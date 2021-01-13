@@ -109,6 +109,7 @@ Invoke-Expression "bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db
 Invoke-Expression "bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/wa.db"
 Invoke-Expression "bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/axolotl.db"
 Invoke-Expression "bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/chatsettings.db"
+Invoke-Expression "bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/Avatars"
 ""
 If (Test-Path "tmp\apps\com.whatsapp\f\key")
 {
@@ -129,6 +130,11 @@ If (Test-Path "tmp\apps\com.whatsapp\db\axolotl.db")
 {
 "Extracting axolotl.db ..."
 Copy-Item tmp\apps\com.whatsapp\db\axolotl.db extracted\axolotl.db
+}
+If (Test-Path "tmp\apps\com.whatsapp\Avatars")
+{
+"Extracting Avatars ..."
+Copy-Item tmp\apps\com.whatsapp\Avatars extracted\Avatars
 }
 If (Test-Path "tmp\apps\com.whatsapp\f\key")
 {
