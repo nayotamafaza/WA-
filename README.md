@@ -3,7 +3,12 @@ Allows WhatsApp users to extract their cipher key and databases on non-rooted An
 
 # Caution
 **By default, this script use the old WhatsApp APK from whatcrypt.com, use it at your own risk.**  
-**You may want to get an old APK from other sources.**
+**You may want to get an old APK from other sources.**  
+For example:
+* [WhatsApp 2.11.414](https://www.apkmirror.com/apk/whatsapp-inc/whatsapp/whatsapp-2-11-414-3-release/) from APKMirror
+* [WhatsApp 2.11.448](https://www.apkmirror.com/apk/whatsapp-inc/whatsapp/whatsapp-2-11-448-3-release/) from APKMirror
+
+**But still, use them at your own risk.**
 
 ###### BRANCH UPDATES:
 v4.0 - Fixed issues with Android API 14-17 (4.0-4.2 Jelly Bean).  
