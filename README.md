@@ -1,6 +1,10 @@
 # WhatsApp Key/DB Extractor
 Allows WhatsApp users to extract their cipher key and databases on non-rooted Android devices.  
 
+# Caution
+**By default, this script use the old WhatsApp APK from whatcrypt.com, use it at your own risk.**  
+**You may want to get an old APK from other sources.**
+
 ###### BRANCH UPDATES:
 v4.0 - Fixed issues with Android API 14-17 (4.0-4.2 Jelly Bean).  
 v4.1 - Added support for Android API 23 (6.0-6.0.1 Marshmallow).  
