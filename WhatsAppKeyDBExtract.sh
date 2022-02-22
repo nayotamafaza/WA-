@@ -97,6 +97,7 @@ echo -e "\nPlease enter your backup password (leave blank for none) and press En
 read password
 java -jar bin/abe.jar unpack tmp/whatsapp.ab tmp/whatsapp.tar $password
 tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/f/key
+tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/f/encrypted_backup.key
 tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/db/msgstore.db
 tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/db/wa.db
 tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/db/axolotl.db
@@ -104,6 +105,8 @@ tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/db/chatsettings.db
 tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/Avatars
 echo -e "\nSaving whatsapp.cryptkey ..."
 cp tmp/apps/com.whatsapp/f/key extracted/whatsapp.cryptkey
+echo -e "\nSaving encrypted_backup.key ..."
+cp tmp/apps/com.whatsapp/f/encrypted_backup.key extracted/encrypted_backup.key
 echo -e "Saving msgstore.db ..."
 cp tmp/apps/com.whatsapp/db/msgstore.db extracted/msgstore.db
 echo -e "Saving wa.db ..."

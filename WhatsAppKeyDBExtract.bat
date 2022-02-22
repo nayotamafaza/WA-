@@ -120,6 +120,7 @@ java -jar bin\abe.jar unpack tmp\whatsapp.ab tmp\whatsapp.tar
 java -jar bin\abe.jar unpack tmp\whatsapp.ab tmp\whatsapp.tar "!password!"
 )
 bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/f/key
+bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/f/encrypted_backup.key
 bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/msgstore.db
 bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/wa.db
 bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/axolotl.db
@@ -129,6 +130,11 @@ echo.
 if exist tmp\apps\com.whatsapp\f\key (
 echo Extracting whatsapp.cryptkey ...
 copy tmp\apps\com.whatsapp\f\key extracted\whatsapp.cryptkey
+echo.
+)
+if exist tmp\apps\com.whatsapp\f\encrypted_backup.key (
+echo Extracting encrypted_backup.key ...
+copy tmp\apps\com.whatsapp\f\encrypted_backup.key extracted\encrypted_backup.key
 echo.
 )
 if exist tmp\apps\com.whatsapp\db\msgstore.db (

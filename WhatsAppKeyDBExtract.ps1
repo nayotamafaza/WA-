@@ -105,6 +105,7 @@ Invoke-Expression "java -jar bin\abe.jar unpack tmp\whatsapp.ab tmp\whatsapp.tar
 }
 ""
 Invoke-Expression "bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/f/key"
+Invoke-Expression "bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/f/encrypted_backup.key"
 Invoke-Expression "bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/msgstore.db"
 Invoke-Expression "bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/wa.db"
 Invoke-Expression "bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/axolotl.db"
@@ -115,6 +116,11 @@ If (Test-Path "tmp\apps\com.whatsapp\f\key")
 {
 "Extracting whatsapp.cryptkey ..."
 Copy-Item tmp\apps\com.whatsapp\f\key extracted\whatsapp.cryptkey
+}
+If (Test-Path "tmp\apps\com.whatsapp\f\encrypted_backup.key")
+{
+"Extracting encrypted_backup.key ..."
+Copy-Item tmp\apps\com.whatsapp\f\encrypted_backup.key extracted\encrypted_backup.key
 }
 If (Test-Path "tmp\apps\com.whatsapp\db\msgstore.db")
 {
