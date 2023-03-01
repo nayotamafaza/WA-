@@ -11,6 +11,17 @@ For example:
 * [WhatsApp 2.11.448](https://www.apkmirror.com/apk/whatsapp-inc/whatsapp/whatsapp-2-11-448-3-release/) from APKMirror ([Web Archive](https://web.archive.org/web/20160418152728/http://www.apkmirror.com/wp-content/uploads/uploaded/546af76d8db6c/com.whatsapp-2.11.448-450166-minAPI7.apk))
 
 **But still, use them at your own risk.**
+## APK Integrity
+Checksum are as follows:
+* c3fba4f772cf361a0846f26bf53f013e45d0ffb2  WhatsApp-2.11.414.apk
+* 3e06cb4be5b25b80a36ae02253eb5a5d68abded8  WhatsApp-2.11.431.apk
+* c67d0c7f209edfac5005f57fafd5a5f83394e98b  WhatsApp-2.11.448.apk
+
+Source:
+* WhatsApp-2.11.414.apk: https://www.apkmirror.com/wp-content/uploads/2014/10/543d316f321fb/com.whatsapp-2.11.414-450123-minAPI7.apk
+* WhatsApp-2.11.431.apk: https://web.archive.org/web/20220111155623/https://whatcrypt.com/WhatsApp-2.11.431.apk
+* WhatsApp-2.11.448.apk: https://www.apkmirror.com/wp-content/uploads/2014/11/546af76d8db6c/com.whatsapp-2.11.448-450166-minAPI7.apk
+
 
 ## BRANCH UPDATES
 v4.0 - Fixed issues with Android API 14-17 (4.0-4.2 Jelly Bean).  
