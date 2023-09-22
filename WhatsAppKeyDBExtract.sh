@@ -87,6 +87,7 @@ else
 adb install -r tmp/LegacyWhatsApp.apk
 fi
 echo -e "Install complete\n"
+echo -e "\nPaused. Open Whatsapp. Ok the Permissions Request. Press Enter to continue"; read trashvar
 if [ $sdkver -ge 23 ]; then
 adb backup -f tmp/whatsapp.ab com.whatsapp
 else
