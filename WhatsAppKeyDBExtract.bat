@@ -78,6 +78,8 @@ if %versionName% gtr 2.11.431 (
 if not exist tmp\LegacyWhatsApp.apk (
 echo Downloading legacy WhatsApp 2.11.431 to local folder
 bin\curl.exe -o tmp\LegacyWhatsApp.apk %apkfurl%
+set exitcode=%ErrorLevel%
+if %exitcode% neq 0 (echo "[FATAL] Curl failed with %exitcode%." && exit %exitcode%)
 ) else (
 echo Found legacy WhatsApp 2.11.431 in local folder
 )
@@ -121,6 +123,8 @@ java -jar bin\abe.jar unpack tmp\whatsapp.ab tmp\whatsapp.tar
 ) else (
 java -jar bin\abe.jar unpack tmp\whatsapp.ab tmp\whatsapp.tar "!password!"
 )
+set exitcode=%ErrorLevel%
+if %exitcode% neq 0 (echo "[FATAL] ABE failed with %exitcode%." && exit %exitcode%)
 bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/f/key
 bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/f/encrypted_backup.key
 bin\tar.exe xvf tmp\whatsapp.tar -C tmp\ apps/com.whatsapp/db/msgstore.db

@@ -60,6 +60,10 @@ If (Test-Path "tmp\LegacyWhatsApp.apk")
 "Downloading legacy WhatsApp 2.11.431 to local folder`r`n"
 Invoke-Expression "bin\curl.exe -o tmp\LegacyWhatsApp.apk $apkfurl"
 ""
+if ($LASTEXITCODE -ne 0){
+"[FATAL] Curl failed with $LASTEXITCODE."
+exit $LASTEXITCODE
+}
 }
 If ($sdkver -ge 11)
 {
@@ -103,6 +107,10 @@ If (!$password)
 Invoke-Expression "java -jar bin\abe.jar unpack tmp\whatsapp.ab tmp\whatsapp.tar"
 } Else {
 Invoke-Expression "java -jar bin\abe.jar unpack tmp\whatsapp.ab tmp\whatsapp.tar $password"
+}
+if ($LASTEXITCODE -ne 0){
+"[FATAL] ABE failed with $LASTEXITCODE."
+exit $LASTEXITCODE
 }
 }
 ""

@@ -58,7 +58,7 @@ apkfurl=https://web.archive.org/web/20141111030303/http://www.whatsapp.com/andro
 apkname=$(basename  ${apkpath/package:/})
 if [ ! -f tmp/LegacyWhatsApp.apk ]; then
 echo -e "\nDownloading legacy WhatsApp 2.11.431 to local folder\n"
-curl -o tmp/LegacyWhatsApp.apk $apkfurl
+curl -o tmp/LegacyWhatsApp.apk $apkfurl || (exitcode=$? && echo -e "\n[FATAL] Curl failed with $exitcode" && exit $exitcode)
 echo -e ""
 else
 echo -e "\nFound legacy WhatsApp 2.11.431 in local folder\n"
@@ -96,7 +96,7 @@ fi
 if [ -f tmp/whatsapp.ab ]; then
 echo -e "\nPlease enter your backup password (leave blank for none) and press Enter: "
 read password
-java -jar bin/abe.jar unpack tmp/whatsapp.ab tmp/whatsapp.tar $password
+java -jar bin/abe.jar unpack tmp/whatsapp.ab tmp/whatsapp.tar $password || (exitcode=$? && echo -e "\n[FATAL] ABE failed with $exitcode" && exit $exitcode)
 tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/f/key
 tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/f/encrypted_backup.key
 tar xvf tmp/whatsapp.tar -C tmp apps/com.whatsapp/db/msgstore.db
