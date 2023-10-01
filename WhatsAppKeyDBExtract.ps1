@@ -83,14 +83,16 @@ Invoke-Expression "bin\adb.exe install -r -d tmp\LegacyWhatsApp.apk"
 } Else {
 Invoke-Expression "bin\adb.exe install -r tmp\LegacyWhatsApp.apk"
 }
-"Install complete`r`n"
+"Install complete! Open Whatsapp, allow the permissions request, if any. Then, press Enter to continue.`r`n"
+""
+$paused = Read-Host
+""
 If ($sdkver -ge 23)
 {
 Invoke-Expression "bin\adb.exe backup -f tmp\whatsapp.ab com.whatsapp"
 } Else {
 Invoke-Expression "bin\adb.exe backup -f tmp\whatsapp.ab -noapk com.whatsapp"
 }
-
 If (Test-Path "tmp\whatsapp.ab")
 {
 ""
