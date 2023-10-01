@@ -103,9 +103,9 @@ bin\adb.exe install -r -d tmp\LegacyWhatsApp.apk
 ) else (
 bin\adb.exe install -r tmp\LegacyWhatsApp.apk
 )
-echo Install complete
+echo Install complete! Open Whatsapp, allow the permissions request, if any. Then, press Enter to continue.
 echo.
-set /p trashvar="Paused. Open Whatsapp. Ok the Permissions Request. Press Enter to continue."
+set /p paused=
 echo.
 if %sdkver% geq 23 (
 bin\adb.exe backup -f tmp\whatsapp.ab com.whatsapp

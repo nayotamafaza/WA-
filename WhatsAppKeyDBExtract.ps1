@@ -83,9 +83,9 @@ Invoke-Expression "bin\adb.exe install -r -d tmp\LegacyWhatsApp.apk"
 } Else {
 Invoke-Expression "bin\adb.exe install -r tmp\LegacyWhatsApp.apk"
 }
-"Install complete`r`n"
+"Install complete! Open Whatsapp, allow the permissions request, if any. Then, press Enter to continue.`r`n"
 ""
-$trashvar = Read-Host 'Paused. Open Whatsapp. Ok the Permissions Request. Press Enter to continue'
+$paused = Read-Host
 ""
 If ($sdkver -ge 23)
 {
