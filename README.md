@@ -3,8 +3,10 @@ Allows WhatsApp users to extract their cipher key and databases on non-rooted An
 
 # Crypt15 encrypted_backup.key is now supported!
 
-# CAUTION
+# CAUTION (READ BEFORE PROCEED)
 **By default, this script use the old WhatsApp APK from WhatsApp.com (in Web Archive), use it at your own risk.**  
+## Always create a backup through the official WhatsApp app if possible before trying!!!!!
+Or you risk lossing all your data...
 
 ## APK Integrity
 Checksum are as follows:
