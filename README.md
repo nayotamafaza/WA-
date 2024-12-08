@@ -1,5 +1,8 @@
 # WhatsApp Key/DB Extractor
 Allows WhatsApp users to extract their cipher key and databases on non-rooted Android 13 or lower devices.
+
+**Android 14 and newer ARE NOT SUPPORTED!**
+
 > [!TIP]
 > Crypt15 encrypted_backup.key is now supported!
 
